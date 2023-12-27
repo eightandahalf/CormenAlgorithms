@@ -1,12 +1,3 @@
-/*ALGOTIHM RESULT:
- * 524613!!254613
- * 254613!!245613
- * 245613!!245613
- * 245613!!124563
- * 124563!!123456
- * 123456!!123456
-*/
-
 #include <stdio.h>
 
 int main()
@@ -18,10 +9,11 @@ int main()
 
 	for(int i = 0; i < array_size; i++)
 	{
+		// just print array before sortion
 		for(int b = 0; b < array_size; b++)
                         printf("%d", array[b]);
 
-
+		// algorithm
 		key = array[i + 1];
 		j = i;
 		while(j >= 0 && array[j] > key)
@@ -31,11 +23,10 @@ int main()
 			j--;	
 		}
 
+		// and after sortion
 		printf("!!");
-
 		for(int b = 0; b < array_size; b++)
 			printf("%d", array[b]);
-
 		printf("\n");
 	}
 
