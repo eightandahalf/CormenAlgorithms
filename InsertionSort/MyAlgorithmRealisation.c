@@ -7,9 +7,10 @@ int main()
 	int key = 0;
 	int j = 0;
 
-	for(int i = 0; i < array_size; i++)
+	for(int i = 0; i < (array_size - 1); i++)
 	{
 		// just print array before sortion
+		printf("before:");
 		for(int b = 0; b < array_size; b++)
                         printf("%d", array[b]);
 
@@ -24,10 +25,10 @@ int main()
 		}
 
 		// and after sortion
-		printf("!!");
+		printf("\nafter:");
 		for(int b = 0; b < array_size; b++)
 			printf("%d", array[b]);
-		printf("\n");
+		printf("\n\n");
 	}
 
 

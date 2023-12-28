@@ -1,6 +1,7 @@
-/* 2.1-1
-Using Figure 2.2 as a model, illustrate the operation of INSERTION-SORT on the
-array A = {31, 41, 59, 26, 41, 58} */
+/* 2.1-2
+Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of nondecreasing order 
+array A = {31, 41, 59, 26, 41, 58} 
+and, I should get: 59, 58, 42, 41, 31, 26 */
 
 #include <stdio.h>
 
@@ -11,11 +12,12 @@ int main()
     int j = 0;
     int arr_size = 6;
 
+    
     for(int i = 0; i < (arr_size - 1); i++)
     {
         key = arr[i + 1];
         j = i;
-        while(j >= 0 && arr[j] > key)
+        while(j >= 0 && arr[j] < key)
         {
             arr[j + 1] = arr[j];
             arr[j] = key;
