@@ -33,6 +33,4 @@ int main()
     for(int i = 0; i < array_size; i++)
         printf("%d ", array[i]);
 
-
-
 }
