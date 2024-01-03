@@ -1,17 +1,11 @@
 ﻿#include <stdio.h>
-//	We can express insertion sort as a recursive procedure as follows. In order to sort
-//	A[1..n], we recursively sort A[1..n-1] and then insert A[n] into the sorted array
-//	A[1..n-1]. Write a recurrence for the running time of this recursive version of
-//	insertion sort.
-
-// можно для начала просто написать insertion sort, а дальше посмотреть
 
 void insertion_sort(int* array, int array_size)
 {
 	int key = 0;
 	int j = 0;
 
-	for (int i = 0; i < (array_size- 1); i++)
+	for (int i = 0; i < array_size; i++)
 	{
 		key = array[i + 1];
 		j = i;
@@ -24,27 +18,36 @@ void insertion_sort(int* array, int array_size)
 	}
 }
 
+void recursive_insertion_sort(int* array, int last_valid_index)
+{
+	if (last_valid_index > 0)
+	{
+		last_valid_index--;
+		recursive_insertion_sort(array, last_valid_index);
+		insertion_sort(array, ++last_valid_index);
+	}
+}
+
+
 int main()
 {
-	int array[10] = { 5, 2, 4, 7, 1, 3, 2, 6, 10, 1 };
+	int array[10] = { 2, 5, 1, 10, 23, 15, 16, 90, 12, 8 };
+	int last_valid_index = 9;
 	int array_size = 10;
-	int last_elem = 0;
 
+	// array before sorting
+	printf("Unsorted array\n");
 	for (int i = 0; i < array_size; i++)
 		printf("%d ", array[i]);
 
+	recursive_insertion_sort(array, last_valid_index);
 
-	for (int i = array_size; i >= 0; i--)
-	{
-		last_elem = array[i - 1];
-		insertion_sort(array, --array_size);
-		array[i] = last_elem;
-	}
-
-	printf("\n");
+	// array after recursive_insertion_sort
+	printf("\nArray after recursive insertion sort\n");
 	for (int i = 0; i < array_size; i++)
 		printf("%d ", array[i]);
 
+	printf("\nPress any key to exit...\n");
 	getchar();
 	return 0;
 }
