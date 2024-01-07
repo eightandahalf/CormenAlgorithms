@@ -1,4 +1,4 @@
 ﻿  main.c
-e:\self_experience\programming\c\cormenalgorithms\findmaximumsubarray\findmaximumsubarray\main.c(46): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+e:\self_experience\programming\c\cormenalgorithms\findmaximumsubarray\findmaximumsubarray\main.c(93): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
   FindMaximumSubarray.vcxproj -> E:\Self_experience\Programming\C\CormenAlgorithms\FindMaximumSubarray\Debug\FindMaximumSubarray.exe
   FindMaximumSubarray.vcxproj -> E:\Self_experience\Programming\C\CormenAlgorithms\FindMaximumSubarray\Debug\FindMaximumSubarray.pdb (Partial PDB)
