@@ -1,0 +1,6 @@
+﻿  main.c
+e:\self_experience\programming\c\cormenalgorithms\findmaximumsubarraynonrecursive\findmaximumsubarraynonrecursive\main.c(11): warning C4101: 'sum': unreferenced local variable
+e:\self_experience\programming\c\cormenalgorithms\findmaximumsubarraynonrecursive\findmaximumsubarraynonrecursive\main.c(19): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+e:\self_experience\programming\c\cormenalgorithms\findmaximumsubarraynonrecursive\findmaximumsubarraynonrecursive\main.c(14): warning C4716: 'find_max_subarray': must return a value
+  FindMaximumSubarrayNonrecursive.vcxproj -> E:\Self_experience\Programming\C\CormenAlgorithms\FindMaximumSubarrayNonrecursive\Debug\FindMaximumSubarrayNonrecursive.exe
+  FindMaximumSubarrayNonrecursive.vcxproj -> E:\Self_experience\Programming\C\CormenAlgorithms\FindMaximumSubarrayNonrecursive\Debug\FindMaximumSubarrayNonrecursive.pdb (Partial PDB)
