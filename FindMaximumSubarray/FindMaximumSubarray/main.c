@@ -42,18 +42,17 @@ lhs* find_max_crossing_subarray(int* array, int low, int mid, int high)
 
 lhs* find_max_subarray(int* array, int low, int high)
 {
-	lhs* lhs_obj = (lhs *)malloc(sizeof(lhs));
-	lhs* left_lhs_obj = (lhs *)malloc(sizeof(lhs));
-	lhs* right_lhs_obj = (lhs *)malloc(sizeof(lhs));
-	lhs* cross_lhs_obj = (lhs *)malloc(sizeof(lhs));
+	lhs* left_lhs_obj;
+	lhs* right_lhs_obj;
+	lhs* cross_lhs_obj;
 	int mid = 0;
 
 	if (high == low)
 	{
+		lhs* lhs_obj = (lhs *)malloc(sizeof(lhs));
 		lhs_obj->low = low;
 		lhs_obj->high = high;
-		lhs_obj->sum = array[low];	
-		free(left_lhs_obj); free(right_lhs_obj); free(cross_lhs_obj);
+		lhs_obj->sum = array[low];
 		return lhs_obj;
 	}
 	else {
@@ -64,17 +63,17 @@ lhs* find_max_subarray(int* array, int low, int high)
 
 		if (left_lhs_obj->sum >= right_lhs_obj->sum && left_lhs_obj->sum >= cross_lhs_obj->sum)
 		{
-			free(lhs_obj); free(right_lhs_obj); free(cross_lhs_obj);
+			free(right_lhs_obj); free(cross_lhs_obj);
 			return left_lhs_obj;
 		}
 		else if (right_lhs_obj->sum >= left_lhs_obj->sum && right_lhs_obj->sum >= cross_lhs_obj->sum)
 		{
-			free(lhs_obj); free(left_lhs_obj); free(cross_lhs_obj);
+			free(left_lhs_obj); free(cross_lhs_obj);
 			return right_lhs_obj;
 		}
 		else
 		{
-			free(lhs_obj); free(left_lhs_obj); free(right_lhs_obj);
+			free(left_lhs_obj); free(right_lhs_obj);
 			return cross_lhs_obj;
 		}
 	}
@@ -108,3 +107,28 @@ int main()
 	getchar();
 	return 0;
 }
+
+// WAY TO TEST PROGRAM WITH STATIC ARRAY "ARRAY"
+//int main()
+//{
+//	int array_size = 10;
+//	srand(time(NULL));   // Initialization, should only be called once.
+//
+//	int array[10] = { 3, -100, -100, -100, -100, -100, -100, -100, -100, -100 };
+//
+//	int high, low;
+//	high = array_size - 1;
+//	low = 0;
+//
+//	lhs* lhs_obj = find_max_subarray(array, low, high);
+//
+//	printf("\nHigh index of array equal to %d", lhs_obj->high);
+//	printf("\nLow index of array equal to %d", lhs_obj->low);
+//	printf("\nSum of maxsum subarray equal to %d\n", lhs_obj->sum);
+//
+//	free(lhs_obj);
+//
+//	printf("Press any key to exit...\n");
+//	getchar();
+//	return 0;
+//}
